@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/weighted-random-picker/static/css/main.cdc7860c.css",
+    "main.js": "/weighted-random-picker/static/js/main.83a20879.js",
+    "static/js/787.2d0125d4.chunk.js": "/weighted-random-picker/static/js/787.2d0125d4.chunk.js",
+    "index.html": "/weighted-random-picker/index.html",
+    "main.cdc7860c.css.map": "/weighted-random-picker/static/css/main.cdc7860c.css.map",
+    "main.83a20879.js.map": "/weighted-random-picker/static/js/main.83a20879.js.map",
+    "787.2d0125d4.chunk.js.map": "/weighted-random-picker/static/js/787.2d0125d4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdc7860c.css",
+    "static/js/main.83a20879.js"
+  ]
+}
