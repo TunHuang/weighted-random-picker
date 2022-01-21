@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/weighted-random-picker/static/css/main.584dccc4.css",
-    "main.js": "/weighted-random-picker/static/js/main.1c1a12f5.js",
+    "main.css": "/weighted-random-picker/static/css/main.87594414.css",
+    "main.js": "/weighted-random-picker/static/js/main.89d30215.js",
     "static/js/787.2d0125d4.chunk.js": "/weighted-random-picker/static/js/787.2d0125d4.chunk.js",
     "index.html": "/weighted-random-picker/index.html",
-    "main.584dccc4.css.map": "/weighted-random-picker/static/css/main.584dccc4.css.map",
-    "main.1c1a12f5.js.map": "/weighted-random-picker/static/js/main.1c1a12f5.js.map",
+    "main.87594414.css.map": "/weighted-random-picker/static/css/main.87594414.css.map",
+    "main.89d30215.js.map": "/weighted-random-picker/static/js/main.89d30215.js.map",
     "787.2d0125d4.chunk.js.map": "/weighted-random-picker/static/js/787.2d0125d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.584dccc4.css",
-    "static/js/main.1c1a12f5.js"
+    "static/css/main.87594414.css",
+    "static/js/main.89d30215.js"
   ]
 }
