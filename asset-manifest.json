@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/weighted-random-picker/static/css/main.87594414.css",
-    "main.js": "/weighted-random-picker/static/js/main.1dbb713d.js",
-    "static/js/787.2d0125d4.chunk.js": "/weighted-random-picker/static/js/787.2d0125d4.chunk.js",
+    "main.js": "/weighted-random-picker/static/js/main.fbf9f394.js",
     "index.html": "/weighted-random-picker/index.html",
     "main.87594414.css.map": "/weighted-random-picker/static/css/main.87594414.css.map",
-    "main.1dbb713d.js.map": "/weighted-random-picker/static/js/main.1dbb713d.js.map",
-    "787.2d0125d4.chunk.js.map": "/weighted-random-picker/static/js/787.2d0125d4.chunk.js.map"
+    "main.fbf9f394.js.map": "/weighted-random-picker/static/js/main.fbf9f394.js.map"
   },
   "entrypoints": [
     "static/css/main.87594414.css",
-    "static/js/main.1dbb713d.js"
+    "static/js/main.fbf9f394.js"
   ]
 }
