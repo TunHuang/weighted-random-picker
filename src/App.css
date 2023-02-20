@@ -5,13 +5,19 @@
   align-items: center;
 }
 
-.queue, .pick {
+.queue,
+.pick,
+.animated {
   border: 2px solid greenyellow;
   border-radius: 8px;
   padding: 10px;
   width: fit-content;
   max-width: 80%;
   margin-bottom: 8px;
+}
+
+.pick {
+  cursor: pointer;
 }
 
 .pick span {
