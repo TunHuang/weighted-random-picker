@@ -16,6 +16,10 @@
   margin-bottom: 8px;
 }
 
+.pick {
+  cursor: pointer;
+}
+
 .pick span {
   color: rgb(0, 85, 0);
   font-weight: 600;

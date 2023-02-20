@@ -96,6 +96,7 @@ function App() {
   }, []);
 
   function handleRadio(event) {
+    resetAnimation();
     setRadio(+event.target.value);
   }
 
@@ -134,6 +135,7 @@ function App() {
   }
 
   function handleButtons(event) {
+    resetAnimation();
     const text = event.target.innerText.toLowerCase();
     if (text === 'add') {
       const newParticipants = textarea.split(',').map((item) => item.trim());
@@ -146,11 +148,10 @@ function App() {
     }
   }
 
-  // const [animateArray, setAnimateArray] = useState([]);
   const [animated, setAnimated] = useState('');
   const [intervalId, setIntervalId] = useState(0);
 
-  function startAnimation(event) {
+  function startAnimation() {
     const filledArray = [];
     state.participants.forEach((participant, index) => {
       for (let i = 0; i < index ** radio; i++) {
@@ -161,14 +162,23 @@ function App() {
       const randomParticipant =
         filledArray[Math.floor(Math.random() * filledArray.length)];
       setAnimated(randomParticipant);
-    }, 100);
+    }, 50);
     setIntervalId(id);
   }
 
-  function selectAnimated(event) {
+  function selectAnimated() {
+    if (intervalId === 0) return;
     clearInterval(intervalId);
-    const newPick = event.target.innerText;
+    setIntervalId(0);
+    const newPick = animated;
     dispatch({ type: 'animatedPick', newPick });
+  }
+
+  function resetAnimation() {
+    if (!intervalId && !animated) return;
+    clearInterval(intervalId);
+    setIntervalId(0);
+    setAnimated('');
   }
 
   return (
@@ -181,13 +191,12 @@ function App() {
           ? addProbToParticipants()
           : state.participants.join(', ')}
       </div>
-      <div className="pick">
+
+      <div className="pick" onClick={selectAnimated}>
         <span>Pick: </span>
-        {state.pick}
+        {animated ? animated : state.pick}
       </div>
-      <div className="animated" onClick={selectAnimated}>
-        {animated}
-      </div>
+
       <div>
         <button onClick={handleButtons}>Clear</button>
         <button onClick={handleButtons}>Shuffle</button>
@@ -221,7 +230,13 @@ function App() {
       <button onClick={handleButtons}>Add</button>
       <p>
         Descriptions and source on{' '}
-        <a href="https://github.com/TunHuang/weighted-random-picker">Github</a>
+        <a
+          href="https://github.com/TunHuang/weighted-random-picker"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>
       </p>
     </div>
   );
