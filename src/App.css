@@ -5,7 +5,9 @@
   align-items: center;
 }
 
-.queue, .pick {
+.queue,
+.pick,
+.animated {
   border: 2px solid greenyellow;
   border-radius: 8px;
   padding: 10px;

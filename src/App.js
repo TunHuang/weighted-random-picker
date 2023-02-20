@@ -20,7 +20,7 @@ function reducer(state, action) {
       return {
         ...state,
         participants: [...action.participants],
-      }
+      };
     case 'add':
       return {
         ...state,
@@ -28,7 +28,7 @@ function reducer(state, action) {
       };
     case 'clear':
       return { pick: '', participants: [] };
-    case 'pick':
+    case 'pick': {
       const maxIndex = state.participants.length - 1;
       const indexSum = calcSum(maxIndex, action.radio);
       let randomFromSum = Math.floor(Math.random() * indexSum) + 1;
@@ -44,6 +44,16 @@ function reducer(state, action) {
         ...state.participants.slice(i + 1),
       ];
       return { pick: newPick, participants: newParticipants };
+    }
+    case 'animatedPick': {
+      const index = state.participants.indexOf(action.newPick);
+      const newParticipants = [
+        action.newPick,
+        ...state.participants.slice(0, index),
+        ...state.participants.slice(index + 1),
+      ];
+      return { pick: action.newPick, participants: newParticipants };
+    }
     case 'shuffle':
       const shuffled = [...state.participants];
       for (let i = shuffled.length - 1; i; i--) {
@@ -78,7 +88,10 @@ function App() {
     }
     const participantsFromLS = localStorage.getItem('participants');
     if (participantsFromLS) {
-      dispatch({ type: 'read_from_localStorage', participants: JSON.parse(participantsFromLS) });
+      dispatch({
+        type: 'read_from_localStorage',
+        participants: JSON.parse(participantsFromLS),
+      });
     }
   }, []);
 
@@ -133,6 +146,31 @@ function App() {
     }
   }
 
+  // const [animateArray, setAnimateArray] = useState([]);
+  const [animated, setAnimated] = useState('');
+  const [intervalId, setIntervalId] = useState(0);
+
+  function startAnimation(event) {
+    const filledArray = [];
+    state.participants.forEach((participant, index) => {
+      for (let i = 0; i < index ** radio; i++) {
+        filledArray.push(participant);
+      }
+    });
+    const id = setInterval(() => {
+      const randomParticipant =
+        filledArray[Math.floor(Math.random() * filledArray.length)];
+      setAnimated(randomParticipant);
+    }, 100);
+    setIntervalId(id);
+  }
+
+  function selectAnimated(event) {
+    clearInterval(intervalId);
+    const newPick = event.target.innerText;
+    dispatch({ type: 'animatedPick', newPick });
+  }
+
   return (
     <div className="App">
       <h1>Not so random picker</h1>
@@ -147,10 +185,14 @@ function App() {
         <span>Pick: </span>
         {state.pick}
       </div>
+      <div className="animated" onClick={selectAnimated}>
+        {animated}
+      </div>
       <div>
         <button onClick={handleButtons}>Clear</button>
         <button onClick={handleButtons}>Shuffle</button>
         <button onClick={handleButtons}>Pick</button>
+        <button onClick={startAnimation}>Animated</button>
         <label>
           show probabilities:
           <input type="checkbox" checked={checked} onChange={handleCheckbox} />
