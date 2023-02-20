@@ -8,7 +8,7 @@ For example we have a class with 16 students. We put their name in the array. Th
 
 0.00%, 0.83%, 1.67%, 2.50%, 3.33%, 4.17%, 5.00%, 5.83%, 6.67%, 7.50%, 8.33%, 9.17%, 10.00%, 10.83%, 11.67%
 
-*added options to choose distribution* The example above uses the linear distribution. With the quadratic distribution, the sum is 0² + 1² + 2² + ... + 15² = 1240, the chance of getting picked is 0²/1240, 1²/1240, 2²/1240, 3²/1240...
+_added options to choose distribution_ The example above uses the linear distribution. With the quadratic distribution, the sum is 0² + 1² + 2² + ... + 15² = 1240, the chance of getting picked is 0²/1240, 1²/1240, 2²/1240, 3²/1240...
 
 With the cubic distribution, the sum is 0³ + 1³ + 2³ + ... + 15³ = 14400, the chance of getting picked is 0³/14400, 1³/14400, 2³/14400, 3³/14400...
 
@@ -19,6 +19,8 @@ After someone got picked, they'll be moved to index 0, and everyone previously b
 Add the names of the participants, seperated with commas, with the textarea and the Add-button. You can make the chance, that certain participants getting picked the first time, bigger by putting their names at the end of the list. Or you can just put them in a random order.
 
 Use the Pick-button to pick someone from the list. They'll be moved to the start of the list (index 0 of the array).
+
+Alternatively use the Animated-button to display random names (but at corresponding probability) in quick succession in the pick field. Then click on the field to pick.
 
 Use the Clear-button to clear the list.
 
