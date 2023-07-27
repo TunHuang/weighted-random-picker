@@ -12,11 +12,11 @@ _added options to choose distribution_ The example above uses the linear distrib
 
 With the cubic distribution, the sum is 0³ + 1³ + 2³ + ... + 15³ = 14400, the chance of getting picked is 0³/14400, 1³/14400, 2³/14400, 3³/14400...
 
-After someone got picked, they'll be moved to index 0, and everyone previously behind them moves one index forward. It means that it's impossible that someone gets picked twice in a row. And the chance of someone getting picked increases with time till they get picked.
+After someone gets picked, they'll be moved to index 0, and everyone previously behind them moves one index forward. It means that it's impossible that someone gets picked twice in a row. And the chance of someone getting picked increases with time till they get picked.
 
 ## How to use
 
-Add the names of the participants, seperated with commas, with the textarea and the Add-button. You can make the chance, that certain participants getting picked the first time, bigger by putting their names at the end of the list. Or you can just put them in a random order.
+Add the names of the participants, separated with commas, with the textarea and the Add-button. You can make the chance, that certain participants getting picked the first time, bigger by putting their names at the end of the list. Or you can just put them in a random order.
 
 Use the Pick-button to pick someone from the list. They'll be moved to the start of the list (index 0 of the array).
 
