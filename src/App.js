@@ -152,15 +152,16 @@ function App() {
   const [intervalId, setIntervalId] = useState(0);
 
   function startAnimation() {
-    const filledArray = [];
-    state.participants.forEach((participant, index) => {
-      for (let i = 0; i < index ** radio; i++) {
-        filledArray.push(participant);
-      }
-    });
+    const maxIndex = state.participants.length - 1;
+    const indexSum = calcSum(maxIndex, radio);
     const id = setInterval(() => {
-      const randomParticipant =
-        filledArray[Math.floor(Math.random() * filledArray.length)];
+      let randomFromSum = Math.floor(Math.random() * indexSum) + 1;
+      let i = 0;
+      while (randomFromSum > 0) {
+        i++;
+        randomFromSum -= i ** radio;
+      }
+      const randomParticipant = state.participants[i];
       setAnimated(randomParticipant);
     }, 50);
     setIntervalId(id);
@@ -225,7 +226,7 @@ function App() {
       <textarea
         value={textarea}
         onChange={handleTextarea}
-        placeholder="Add participants, seperated with commas"
+        placeholder="Add participants, separated with commas"
       />
       <button onClick={handleButtons}>Add</button>
       <p>
